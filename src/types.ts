@@ -1,5 +1,5 @@
 export interface RequestOptions {
   method: string;
-  headers: Headers;
+  headers?: Headers;
   body?: Record<string, unknown>;
 }

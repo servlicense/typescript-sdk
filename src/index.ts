@@ -36,6 +36,15 @@ class ServlicenseClient {
 
     return response.data;
   }
+
+  async me(): Promise<{ id: string; scopes: [] }> {
+    if (!this.identifier || !this.secret) {
+      throw new Error(
+        "ServlicenseClientError: No credentials provided, can't check scopes."
+      );
+    }
+    return this.request("/auth/me", { method: "GET" });
+  }
 }
 
 export default ServlicenseClient;
