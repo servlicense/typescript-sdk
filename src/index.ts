@@ -10,9 +10,9 @@ class ServlicenseClient {
     this.server = server;
   }
 
-  withAuth(identifier: string, secret: string): this {
-    this.identifier = identifier;
-    this.secret = secret;
+  withAuth(options: { identifier: string; secret: string }): this {
+    this.identifier = options.identifier;
+    this.secret = options.secret;
     return this;
   }
 
