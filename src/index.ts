@@ -45,6 +45,17 @@ class ServlicenseClient {
     }
     return this.request("/auth/me", { method: "GET" });
   }
+
+  async createLicense(validUntil: Date): Promise<{ id: string }> {
+    return this.request("/licenses", {
+      method: "POST",
+      body: { validUntil },
+    });
+  }
+
+  async checkLicense(licenseId: string): Promise<{ valid: boolean }> {
+    return this.request(`/licenses/check/${licenseId}`, { method: "GET" });
+  }
 }
 
 export default ServlicenseClient;
