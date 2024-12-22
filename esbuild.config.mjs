@@ -6,8 +6,7 @@ const configs = [
     entryPoints: ["./src/index.ts"],
     bundle: true,
     outfile: "./dist/index.js",
-    packages: "external",
-    platform: "node",
+    packages: "bundle",
     format: "esm",
   },
 ];
